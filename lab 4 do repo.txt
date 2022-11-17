@@ -1,0 +1,83 @@
+ZAD 1
+1.
+
+ALTER TABLE postac ADD zyje enum('Tak','Nie') DEFAULT 'TAK';
+Update postac set zyje='nie' where id_postaci = 4 or id_postaci = 10;
+SHOW CREATE TABLE postac;
+SHOW CREATE TABLE walizka;
+SHOW CREATE TABLE przetwory;
+SHOW CREATE TABLE statek;
+ALTER TABLE postac drop foreign key postac_ibfk_1;
+ALTER TABLE walizka drop foreign key walizka_ibfk_1;
+ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_1;
+ALTER TABLE przetwory DROP FOREIGN KEY przetwory_ibfk_2;
+
+2.
+ALTER TABLE postac ADD COLUMN pesel int(11);
+Update postac  set pesel='1' where nazwa = 'Bjorn';
+Update postac  set pesel='2' where nazwa = 'drozd';
+Update postac  set pesel='3' where nazwa = 'tesciowa';
+Update postac  set pesel='4' where nazwa = 'kratos';
+Update postac  set pesel='5' where nazwa = 'Bubus';
+Update postac  set pesel='6' where nazwa = 'Bozydar';
+Update postac  set pesel='7' where nazwa = 'Kaluch';
+Update postac  set pesel='8' where nazwa = 'Antek';
+ALTER TABLE postac ADD PRIMARY KEY(pesel);
+ALTER TABLE postac MODIFY COLUMN rodzaj enum('wiking','ptak','kobieta','syrena');
+INSERT INTO postac(nazwa,rodzaj,pesel) VALUES ('Gertruda Nieszczera','syrena',9);
+
+ZAD 2
+UPDATE postac set = nazwa_statku='czarna perla' where like 'a';
+UPDATE statek SET max_ladownosc = max_ladownosc * 0.7 WHERE data_wodowania='2000-01-01';
+ALTER TABLE postac MODIFY wiek int check(wiek < 1000);
+
+ZAD 3
+INSERT INTO postac(nazwa,pesel) VALUES ('Loko',10);
+UPDATE statek SET max_ladownosc = max_ladownosc * 0.7 WHERE data_wodowania='2000-01-01';
+ALTER TABLE postac MODIFY wiek int check(wiek < 1000);
+
+ZAD 4
+INSERT INTO postac(nazwa,pesel) VALUES ('Loko',11);
+CREATE TABLE marynarz like postac;
+1.
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (1,'Bjorn','wiking','1657-10-28','300','kapitan','czarna perla','tak',1);
+2. 
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (4,'Kratos','wiking','1989-11-11','30','zaloga','czarna perla','tak',4);
+3.
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (6,'Bubus','wiking','1989-05-10','40','zaloga','czarna perla','tak',5);
+4.
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (8,'Bozydar','wiking','1970-05-10','80','zaloga','czarna perla','tak',6);
+5.
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (9,'kaluch','wiking','1560-12-10','50','zaloga','czarna perla','tak',7);
+6.
+insert into marynarz(id_postaci,nazwa,rodzaj,data_ur,wiek,funkcja,nazwa_statku,zyje,pesel) Values (10,'antek','wiking','1560-12-10','49','zaloga','czarna perla','tak',8);
+
+ZAD 5
+
+UPDATE postac SET nazwa_statku=NULL WHERE nazwa_statku='czarna perla';
+UPDATE postac SET zyje='nie' WHERE nazwa='Bozydar';
+delete from statek where nazwa_statku = 'czarna perla';
+delete from statek where nazwa_statku = 'czerwona pedla';
+SHOW CREATE TABLE statek;
+alter table postac  drop foreign key postac_ibfk_1;
+DROP TABLE statek;
+create table zwierz(id int auto_increment, nazwa varchar(50), wiek int unsigned, primary key(id));
+insert into zwierz values (1,'Gertruda Nieszczera',15);
+insert into zwierz values (2,'Loko',20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
