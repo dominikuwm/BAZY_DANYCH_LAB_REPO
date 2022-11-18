@@ -1,8 +1,7 @@
 ZAD 1
 1.
 
-ALTER TABLE postac ADD zyje enum('Tak','Nie') DEFAULT 'TAK';
-Update postac set zyje='nie' where id_postaci = 4 or id_postaci = 10;
+ALTER TABLE postac delete where id_postaci = 4 or id_postaci = 10;
 SHOW CREATE TABLE postac;
 SHOW CREATE TABLE walizka;
 SHOW CREATE TABLE przetwory;
