@@ -1,0 +1,21 @@
+ZAD 1:
+1.
+
+1.1 create table gutowskid.kreatura select*from wikingowie.kreatura;
+
+1.2 create table gutowskid.zasob select*from wikingowie.zasob;
+
+1.3 create table gutowskid.ekwipunek select*from wikingowie.ekwipunek;
+
+
+2. select*from zasob;
+3. select*from zasob where rodzaj='jedzenie';
+4.select ilosc from zasob where idzasobu='1' or idzasobu = '3' or idzasobu='5'\\\ do poprawy
+
+ZAD 2
+1. select*from kreatura where rodzaj != 'wiedzma' AND udzwig > 50;
+2. select*from zasob where waga between 2 and 5;
+3. select*from kreatura where nazwa like  '%or%' and udzwig  between '30' and '70';
+
+ZAD 3
+1. select*from zasob where dataPozyskania between month() and month(); \\\ do domu pokminic
