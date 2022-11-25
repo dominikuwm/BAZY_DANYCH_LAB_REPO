@@ -20,3 +20,4 @@ ZAD 2
 ZAD 3
 1. select*from zasob where dataPozyskania between month() and month(); \\\ do domu pokminic
 2. select*from zasob where rodzaj is not null order by waga asc;
+3. select*from kreatura order by dataUr asc limit 5;
