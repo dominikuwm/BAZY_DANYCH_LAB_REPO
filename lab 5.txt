@@ -21,3 +21,13 @@ ZAD 3
 1. select dataUr, month(dataUr) from kreatura where month(dataUr) in (7,8);
 2. select*from zasob where rodzaj is not null order by waga asc;
 3. select*from kreatura order by dataUr asc limit 5;
+
+ZAD 4
+1. Select distinct rodzaj from zasob;
+2. Select concat(nazwa,"-",rodzaj) from kreatura where rodzaj like 'wi%';
+3. select nazwa,ilosc*waga as waga_calkowita  from zasob where year(dataPozyskania)>=2007;
+
+ZAD 5
+1. select nazwa, (ilosc*waga)*0.7 as waga_netto, (ilosc*waga)*0.3 as odpadki from zasob;
+2. select rodzaj from zasob where rodzaj is not null; 
+3. select distinct (rodzaj) from zasob where nazwa like 'Ba%' or nazwa like '%os';
