@@ -1,0 +1,8 @@
+ZAD 1
+1. select avg(waga)  from kreatura where rodzaj = 'wiking'; 
+2. select rodzaj, avg (waga), count(*) from kreatura group by rodzaj;
+3. select rodzaj,  avg(2022 - year(dataUr))  as sredni_wiek from   kreatura group by rodzaj;
+
+ZAD 2
+1. select rodzaj, sum(waga*ilosc) from zasob group by rodzaj;
+2. select nazwa, avg(waga) from zasob where ilosc > 4 group by nazwa having  sum(ilosc*waga); 
