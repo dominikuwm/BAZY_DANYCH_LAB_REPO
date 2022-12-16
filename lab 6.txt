@@ -8,7 +8,7 @@ ZAD 2
 2. select nazwa, avg(waga) from zasob where ilosc > 4 group by nazwa having  sum(ilosc*waga); 
 ZAD 3.
 1. select ilosc, nazwa from kreatura k join ekwipunek e on e.idEkwipunku=k.idKreatury;
-2.
+2.select kreatura.nazwa,zasob.nazwa from kreatura inner join ekwipunek on kreatura.idkreatury=ekwipunek.idKreatury inner join zasob on zasob.idZasobu=ekwipunek.idZasobu order by kreatura.nazwa asc;
 3. select*from kreatura k left join ekwipunek e on k.idkreatury=e.idKreatury where e.idKreatury is null;
 zad 4
 1.select *from kreatura k
@@ -16,6 +16,7 @@ join ekwipunek e on k.idKreatury = e.idKreatury join zasob z on e.idZasobu = z.i
 where year(dataUr) between 1670 and 1679 and k.rodzaj = 'wiking ';
 
 2.select kreatura.nazwa,zasob.nazwa from kreatura, zasob where zasob.rodzaj='jedzenie' group by kreatura.nazwa order by kreatura.dataUr desc limit 5;
+3. //
 
 3.
 zad 5
