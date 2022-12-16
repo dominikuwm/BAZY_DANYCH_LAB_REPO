@@ -1,0 +1,2 @@
+zad 1
+2. select kreatura.nazwa from kreatura where idkreatury not in (select id_uczestnika from uczestnicy);
