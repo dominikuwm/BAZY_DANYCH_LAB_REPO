@@ -20,4 +20,4 @@ where year(dataUr) between 1670 and 1679 and k.rodzaj = 'wiking ';
 
 3.
 zad 5
-1.select kreatura.nazwa,AVG(zasob.waga) as avg_waga_zasobow from kreatura,zasob where kreatura.rodzaj !="malpa" and kreatura.rodzaj !="waz" and kreatura.udzwig <30;
+1.select k.rodzaj, sum(z.waga * e.ilosc),count(*),count(distinct e.idKreatury), sum(z.waga*e.ilosc)/count(distinct e.idKreatury) from kreatura k inner join ekwipunek e on k.idkreatury=e.idKreatury inner join zasob z on z.idzasobu=e.idZasobu where k.rodzaj not in ('malpa','waz') group by k.rodzaj having sum(e.ilosc)<30;
