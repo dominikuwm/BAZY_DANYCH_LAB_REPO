@@ -18,3 +18,5 @@ where year(dataUr) between 1670 and 1679 and k.rodzaj = 'wiking ';
 2.select kreatura.nazwa,zasob.nazwa from kreatura, zasob where zasob.rodzaj='jedzenie' group by kreatura.nazwa order by kreatura.dataUr desc limit 5;
 
 3.
+zad 5
+1.select kreatura.nazwa,AVG(zasob.waga) as avg_waga_zasobow from kreatura,zasob where kreatura.rodzaj !="malpa" and kreatura.rodzaj !="waz" and kreatura.udzwig <30;
