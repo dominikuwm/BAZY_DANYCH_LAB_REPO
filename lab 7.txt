@@ -1,4 +1,5 @@
 zad 1
 2. select kreatura.nazwa from kreatura where idkreatury not in (select id_uczestnika from uczestnicy);
 zad 2
-select w.nazwaa, count(u.id_uczestnika), group_concat(k.nazwa) from wyprawa w join uczestnicy u on w.id_wyprawy=u.id_wyprawy join kreatura k on k.idkreatury=u.id_uczestnika group by w.id_wyprawy;
+1. select w.nazwaa, count(u.id_uczestnika), group_concat(k.nazwa) from wyprawa w join uczestnicy u on w.id_wyprawy=u.id_wyprawy join kreatura k on k.idkreatury=u.id_uczestnika group by w.id_wyprawy;
+2.
