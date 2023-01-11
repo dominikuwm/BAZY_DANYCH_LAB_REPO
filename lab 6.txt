@@ -6,6 +6,7 @@ ZAD 1
 ZAD 2
 1. select rodzaj, sum(waga*ilosc) from zasob group by rodzaj;
 2. select nazwa, avg(waga) from zasob where ilosc > 4 group by nazwa having  sum(ilosc*waga); 
+3. select rodzaj ,count( nazwa) from zasob where ilosc > 1 group by rodzaj;
 ZAD 3.
 1. select ilosc, nazwa from kreatura k join ekwipunek e on e.idEkwipunku=k.idKreatury;
 2.select kreatura.nazwa,zasob.nazwa from kreatura inner join ekwipunek on kreatura.idkreatury=ekwipunek.idKreatury inner join zasob on zasob.idZasobu=ekwipunek.idZasobu order by kreatura.nazwa asc;
