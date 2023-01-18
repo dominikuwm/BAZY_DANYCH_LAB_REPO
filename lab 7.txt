@@ -1,7 +1,10 @@
 zad 1
-1. select kreatura.nazwa from kreatura where idkreatury not in (select id_uczestnika from uczestnicy);
+1. 
 
-2. select w.nazwaa, count(u.id_uczestnika), group_concat(k.nazwa) from wyprawa w join uczestnicy u on w.id_wyprawy=u.id_wyprawy join kreatura k on k.idkreatury=u.id_uczestnika group by w.id_wyprawy;
+2. SELECT k.nazwa 
+FROM kreatura k
+LEFT JOIN uczestnicy u ON k.idKreatury = u.id_uczestnika
+WHERE u.id_wyprawy IS NULL;
 
 3. SELECT w.nazwa, SUM(k.udzwig) as Suma_udzwigu
 FROM wyprawa w
