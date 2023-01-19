@@ -1,5 +1,9 @@
 zad 1
-1. 
+1. create table gutowskid.nazwa tabeli select*from wikingowie.nazwa tabeli;
+1.1 aleter table nazwa tabeli add primary key (nazwa kolumny)
+1.2 ALTER TABLE `nazwa_tabeli`
+ADD CONSTRAINT nazwa_klucza_obcego
+FOREIGN KEY `nazwa_tabeli2`(`nazwa_kolumny3`);
 
 2. SELECT k.nazwa 
 FROM kreatura k
