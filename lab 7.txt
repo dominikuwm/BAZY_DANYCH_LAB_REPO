@@ -11,7 +11,13 @@ FROM wyprawa w
 JOIN uczestnicy u ON w.id_wyprawy = u.id_wyprawy
 JOIN kreatura k ON u.id_uczestnika = k.idKreatury
 GROUP BY w.nazwa
-
+zad 2
+1.
+ SELECT w.nazwa as 'Wyprawa', COUNT(u.id_uczestnika) as 'Liczba uczestników', GROUP_CONCAT(k.nazwa SEPARATOR ', ') as 'Nazwy uczestników'
+FROM wyprawa w
+LEFT JOIN uczestnicy u ON w.id_wyprawy = u.id_wyprawy
+LEFT JOIN kreatura k ON u.id_uczestnika = k.idKreatury
+GROUP BY w.nazwa;
 zad 3
 
 1. SELECT ifnull(count(etapy_wyprawy.sektor),0) AS ilosc_odwiedzin, sektor.nazwa FROM sektor LEFT JOIN etapy_wyprawy ON (etapy_wyprawy.sektor=sektor.id_sektora) GROUP BY sektor.id_sektora;
