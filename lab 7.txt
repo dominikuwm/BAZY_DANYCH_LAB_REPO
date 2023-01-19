@@ -18,6 +18,13 @@ FROM wyprawa w
 LEFT JOIN uczestnicy u ON w.id_wyprawy = u.id_wyprawy
 LEFT JOIN kreatura k ON u.id_uczestnika = k.idKreatury
 GROUP BY w.nazwa;
+2.
+SELECT wyprawa.nazwa AS nazwa_wyprawy, etapy_wyprawy.kolejnosc, sektor.nazwa AS nazwa_sektora, kreatura.nazwa AS nazwa_kierownika
+FROM etapy_wyprawy
+JOIN wyprawa ON etapy_wyprawy.idWyprawy = wyprawa.id_wyprawy
+JOIN sektor ON etapy_wyprawy.sektor = sektor.id_sektora
+JOIN kreatura ON wyprawa.kierownik = kreatura.idKreatury
+ORDER BY wyprawa.data_rozpoczecia, etapy_wyprawy.kolejnosc;
 zad 3
 
 1. SELECT ifnull(count(etapy_wyprawy.sektor),0) AS ilosc_odwiedzin, sektor.nazwa FROM sektor LEFT JOIN etapy_wyprawy ON (etapy_wyprawy.sektor=sektor.id_sektora) GROUP BY sektor.id_sektora;
